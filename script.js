@@ -95,7 +95,7 @@ const score = document.getElementById('score');
 function scorea(event) {
   const clickedBall = event.target;
   if (clickedBall.id === 'correct') {
-    score.value += 3;
+    score.value = score.innerHTML + 3;
   }
 }
 
