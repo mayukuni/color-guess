@@ -1,3 +1,4 @@
+// 2
 let rgbColor = document.getElementById('rgb-color');
 
 function randomColor() {
@@ -12,3 +13,15 @@ function addRgbText() {
 }
 
 addRgbText();
+
+// 3
+function addColorToBalls() {
+  document.getElementsByClassName('ball')[0].style.backgroundColor = `rgb${randomColor()}`;
+  document.getElementsByClassName('ball')[1].style.backgroundColor = `rgb${randomColor()}`;
+  document.getElementsByClassName('ball')[2].style.backgroundColor = `rgb${randomColor()}`;
+  document.getElementsByClassName('ball')[3].style.backgroundColor = `rgb${randomColor()}`;
+  document.getElementsByClassName('ball')[4].style.backgroundColor = `rgb${randomColor()}`;
+  document.getElementsByClassName('ball')[5].style.backgroundColor = `rgb${randomColor()}`;
+}
+
+addColorToBalls();
