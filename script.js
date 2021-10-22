@@ -89,3 +89,19 @@ function resetAll() {
 }
 
 resetButton.addEventListener('click', resetAll);
+
+const score = document.getElementById('score');
+
+function scorea(event) {
+  const clickedBall = event.target;
+  if (clickedBall.id === 'correct') {
+    score.value += 3;
+  }
+}
+
+ball1.addEventListener('click', scorea);
+ball2.addEventListener('click', scorea);
+ball3.addEventListener('click', scorea);
+ball4.addEventListener('click', scorea);
+ball5.addEventListener('click', scorea);
+ball6.addEventListener('click', scorea);
