@@ -1,4 +1,4 @@
-let rgbColor = document.getElementById('rgb-color');
+const rgbColor = document.getElementById('rgb-color');
 
 function randomColor() {
   const randomNumber = Math.floor(Math.random() * 256);
@@ -45,30 +45,30 @@ addRgbText();
 
 const correctAnswer = rgbColor.innerHTML;
 
-function addAnswerId() {
+function addCorrectId() {
   if (ball1.value === correctAnswer) {
-    ball1.id = 'answer';
+    ball1.id = 'correct';
   } if (ball2.value === correctAnswer) {
-    ball2.id = 'answer';
+    ball2.id = 'correct';
   } if (ball3.value === correctAnswer) {
-    ball3.id = 'answer';
+    ball3.id = 'correct';
   } if (ball4.value === correctAnswer) {
-    ball4.id = 'answer';
+    ball4.id = 'correct';
   } if (ball5.value === correctAnswer) {
-    ball5.id = 'answer';
+    ball5.id = 'correct';
   } if (ball6.value === correctAnswer) {
-    ball6.id = 'answer';
+    ball6.id = 'correct';
   }
 }
 
-addAnswerId();
+addCorrectId();
 
-const result = document.getElementById('result');
+const result = document.getElementById('answer');
 function showResult(event) {
   const clickedBall = event.target;
-  if (clickedBall.id === 'answer') {
+  if (clickedBall.id === 'correct') {
     result.innerHTML = 'Acertou!';
-  } else result.innerHTML = 'Errou!Tente novamente!';
+  } else result.innerHTML = 'Errou! Tente novamente!';
 }
 
 ball1.addEventListener('click', showResult);
@@ -77,3 +77,15 @@ ball3.addEventListener('click', showResult);
 ball4.addEventListener('click', showResult);
 ball5.addEventListener('click', showResult);
 ball6.addEventListener('click', showResult);
+
+const resetButton = document.getElementById('reset-game');
+
+function resetAll() {
+  addColorToBalls();
+  randomBall();
+  addRgbText();
+  addCorrectId();
+  result.innerHTML = 'Escolha uma cor';
+}
+
+resetButton.addEventListener('click', resetAll);
